@@ -1,6 +1,6 @@
 ---
 name: ml-business-insight
-description: Turns finished EDA output into the business argument that drives every modeling choice after it. Use after the data is cleaned and explored and before any model is fitted in coursework or any ML project. Trigger on "what does this mean for the business", "so what", "turn this into insight", "business insight", "I've done my EDA now what", "what should I model", "which metric should I use", "help me frame this", "is this worth modeling", or whenever the user pastes EDA output and asks what it means. Produces a decision sentence, the one constraint that drives every later choice, a justified metric pair, and a deliberately capped modeling plan, written for a non-technical reader with no jargon. Refuses to manufacture a business case when none exists. Does not build notebooks, fit models, or read raw unexamined data - that last one is new-dataset-workflow's job.
+description: Turns finished EDA output into the business argument that drives every modeling choice after it. Use after the data is cleaned and explored and before any model is fitted in any ML project. Trigger on "what does this mean for the business", "so what", "turn this into insight", "business insight", "I've done my EDA now what", "what should I model", "which metric should I use", "help me frame this", "is this worth modeling", or whenever the user pastes EDA output and asks what it means. Produces a decision sentence, the one constraint that drives every later choice, a justified metric pair, and a deliberately capped modeling plan, written for a non-technical reader with no jargon. Refuses to manufacture a business case when none exists. Does not build notebooks, fit models, or read raw unexamined data - that last one is new-dataset-workflow's job.
 ---
 
 # ML Business Insight
@@ -95,7 +95,7 @@ Decide this here, not later. Getting it wrong wastes the most time of any single
 
 **Category target.** The tree family is the right home. Baseline, one simple model, one better model.
 
-**Number target.** Trees are genuinely poor at this. On the scikit-learn Diabetes data, in my coursework, a tree scored
+**Number target.** Trees are genuinely poor at this. On the scikit-learn Diabetes data, in my own runs, a tree scored
 R² 0.13 to 0.14 while plain linear regression scored 0.45 and XGBoost 0.37. Start with linear
 regression as the baseline and justify from there.
 
@@ -115,7 +115,7 @@ One improvement lever, measured, and report the size of the gain honestly even w
 State the stopping condition before you start: you stop when the next step stops paying, and you say
 so in the notebook rather than quietly continuing.
 
-Results from my own coursework argue for this. A seven node regularized tree matched the big unrestricted
+Results from my own runs argue for this. A seven node regularized tree matched the big unrestricted
 one exactly. XGBoost improved when cut from 300 trees to 10. AdaBoost, the fancier method, lost to a
 plain regularized tree. Simpler winning is a citable finding, not a preference.
 
@@ -157,7 +157,7 @@ Keep the whole block under 300 words. If it runs longer, something in it is not 
 
 ## Hard rules
 
-**Never state a number that is not in the output the user pasted.** This is the most punished failure in graded work: text saying 90% above code that prints 80%. If a number is needed and not
+**Never state a number that is not in the output the user pasted.** This is the fastest way to lose a reviewer's trust: text saying 90% above code that prints 80%. If a number is needed and not
 present, ask for it or leave a visible gap.
 
 **Refuse rather than manufacture.** If the data does not support a decision anyone would act on, say

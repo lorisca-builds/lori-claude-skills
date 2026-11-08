@@ -1,6 +1,6 @@
 ---
 name: new-dataset-workflow
-description: A "look before you model" reader for machine learning datasets. Use whenever a dataset hasn't been examined yet AND the destination is a predictive model - a UCI/Kaggle snippet like `fetch_ucirepo(id=468)` or `load_wine()`, a `pd.read_csv(...)` line, a Colab notebook plus CSV, or a bare CSV upload. Trigger on "here's the dataset", "what is this data", "explain this dataset", "which algorithm should I use", "I found this on UCI/Kaggle", "pick a dataset for my assignment", "EDA", or when the user pastes loading code with no further instruction. Also trigger proactively when they're about to build a classification or regression notebook on data nobody has looked at yet - don't wait for the word "analysis". ONLY for the pre-modeling reading stage - explains what the data is and where modeling should start, then stops and hands off. Builds no notebooks. For analysis with no model at the end, use a general data analysis workflow instead.
+description: A "look before you model" reader for machine learning datasets. Use whenever a dataset hasn't been examined yet AND the destination is a predictive model - a UCI/Kaggle snippet like `fetch_ucirepo(id=468)` or `load_wine()`, a `pd.read_csv(...)` line, a Colab notebook plus CSV, or a bare CSV upload. Trigger on "here's the dataset", "what is this data", "explain this dataset", "which algorithm should I use", "I found this on UCI/Kaggle", "pick a dataset for this project", "EDA", or when the user pastes loading code with no further instruction. Also trigger proactively when they're about to build a classification or regression notebook on data nobody has looked at yet - don't wait for the word "analysis". ONLY for the pre-modeling reading stage - explains what the data is and where modeling should start, then stops and hands off. Builds no notebooks. For analysis with no model at the end, use a general data analysis workflow instead.
 ---
 
 # New Dataset Workflow - the ML data reader
@@ -11,9 +11,9 @@ This is the **first half** of a two-step machine learning process. This skill re
 
 ## Scope - read this before triggering
 
-This skill is for **machine learning** data reading specifically: data where the destination is a model that predicts something. Signals that this is the right skill: there's a target column, the words classification/regression/algorithm/model appear, or the context is ML coursework (a graded assignment, exam practice, Kaggle lessons).
+This skill is for **machine learning** data reading specifically: data where the destination is a model that predicts something. Signals that this is the right skill: there's a target column, the words classification/regression/algorithm/model appear, or the context is a modeling deliverable, a take-home exercise or practice on a public dataset.
 
-If the request is general business or statistical analysis with no model at the end - pivot tables, regression interpretation for a lab writeup, "what does this spreadsheet tell me" - that is a general data analysis job, not this skill's.
+If the request is general business or statistical analysis with no model at the end - pivot tables, regression interpretation for a report, "what does this spreadsheet tell me" - that is a general data analysis job, not this skill's.
 
 ---
 
@@ -44,12 +44,12 @@ Run real code to get `.shape`, `.dtypes`, `.head()`, per-column missing counts, 
 
 Check these in order, because each one can flip what you'd suggest:
 
-- **Size** - rows and columns. If this is heading toward a graded assignment with size thresholds (for example at least 1,000 rows and 10 features), check them and flag a shortfall loudly; that's disqualifying, not a footnote.
+- **Size** - rows and columns. If the brief sets size thresholds (for example at least 1,000 rows and 10 features), check them and flag a shortfall loudly. That's disqualifying, not a footnote.
 - **Feature types** - numeric, categorical, or mixed. Watch specifically for **ID codes wearing a number costume**: columns like `Browser`, `Region`, `TrafficType` stored as 1/2/3 where "4" is not twice "2", it's just a different thing. Trees handle these fine; methods that assume numbers have magnitude do not. Name this when it appears - it's a classic quiet trap.
 - **Missing data** - how much, and where.
 - **Target balance** (classification) - run `.value_counts(normalize=True)`. If one outcome dominates, name **the accuracy trap** out loud: a model that lazily guesses the majority every time scores high accuracy while being useless. Never quietly swap metrics without explaining why.
 - **Relationships to the target** - a quick correlation pass. What looks connected, what doesn't.
-- **The "too easy" check** - if a dead-simple first model would obviously hit ~100%, flag it now. A dataset that saturates instantly can't produce the "improved from X to Y" story coursework is usually graded on, and it's much cheaper to learn that before building.
+- **The "too easy" check** - if a dead-simple first model would obviously hit ~100%, flag it now. A dataset that saturates instantly can't produce the "improved from X to Y" story a modeling deliverable needs to tell, and it's much cheaper to learn that before building.
 - **Anything odd** - duplicate rows, impossible values, suspiciously clean columns. Surface these as observations with a decision attached ("keep or drop?"), not as silent judgments.
 
 ## Step 4: Pick metrics, justified by Step 3
@@ -64,7 +64,7 @@ Recommend a starting point and the likely path, following the standard escalatio
 2. **Bagging / Random Forest** - when the baseline looks like it's memorizing quirks instead of learning patterns; many trees voting together smooth out noise.
 3. **Boosting (AdaBoost / XGBoost)** - when more raw performance is worth giving up interpretability; each new tree specifically fixes the previous ones' mistakes.
 
-For the recommended starting point, give all three things a grader looks for: **data** (what the numbers in Step 3 showed), **logic** (the chain from that data to this algorithm), and **intuition** (the judgment call, stated as a judgment call - not dressed up as certainty).
+For the recommended starting point, give all three things a reviewer looks for: **data** (what the numbers in Step 3 showed), **logic** (the chain from that data to this algorithm), and **intuition** (the judgment call, stated as a judgment call - not dressed up as certainty).
 
 This is a *direction*, not a modeling plan. The executor skill builds the actual thing.
 

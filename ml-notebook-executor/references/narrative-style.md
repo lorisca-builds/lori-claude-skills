@@ -1,6 +1,6 @@
 # Narrative style - plain language, real content
 
-This mirrors the same standard `new-dataset-workflow` holds itself to, because the two skills are meant to read as one continuous voice across a session: **simple words, not simple content.** The user is learning this material to be examined on it - a cartoonishly dumbed-down version they couldn't defend in front of their professor is worse than useless. The job is translation, not dilution.
+This mirrors the same standard `new-dataset-workflow` holds itself to, because the two skills are meant to read as one continuous voice across a session: **simple words, not simple content.** The reader has to be able to defend this work under questioning - a cartoonishly dumbed-down version they couldn't defend in front of a sharp reviewer is worse than useless. The job is translation, not dilution.
 
 ## The core rules
 
@@ -10,7 +10,7 @@ This mirrors the same standard `new-dataset-workflow` holds itself to, because t
 
 **Use concrete analogies where they genuinely clarify - and only there.** "Boosting chains trees together like a tutor who reviews your last practice test and drills exactly what you got wrong" earns its place because it makes the *mechanism* click, not just the vibe. An analogy that's cute but doesn't actually explain how the thing works is padding - cut it.
 
-**Every code cell gets a markdown cell before it explaining what it does and why it's needed** - not "this splits the data" but "we hold back 20% of the data as a test set because grading a model on data it already memorized proves nothing, the same way grading a student on the exact questions they practiced would." What, and why, together - a common rubric criterion, and just good writing regardless of whether the notebook is graded.
+**Every code cell gets a markdown cell before it explaining what it does and why it's needed** - not "this splits the data" but "we hold back 20% of the data as a test set because scoring a model on data it already memorized proves nothing, the same way testing someone on the exact questions they practiced would." What, and why, together - it's what a reviewer checks first, and it's just good writing regardless of who reads the notebook.
 
 **Don't restate what's obvious from the code.** If a line reads `X_train, X_test = ...`, the markdown shouldn't just say "this splits X into train and test" - that's visible in the line itself. The markdown should add the *reasoning* the code alone can't carry: why this split ratio, why stratify, why this random seed choice matters for reproducibility.
 
@@ -22,7 +22,7 @@ This mirrors the same standard `new-dataset-workflow` holds itself to, because t
 > This code trains a random forest and evaluates it on the test set.
 
 **Better:**
-> A single tree, even tuned, is fragile - its whole flowchart hinges on which question happens to win at the top, so a slightly different set of training students could produce a meaningfully different tree with different mistakes. A **random forest** fixes this by training many trees in parallel, each on its own random sample of students (with repeats allowed - a trick called **bootstrapping**), and letting them vote. Individual trees still make mistakes, but different trees make *different* mistakes, and the vote averages the noise away.
+> A single tree, even tuned, is fragile - its whole flowchart hinges on which question happens to win at the top, so a slightly different set of training customers could produce a meaningfully different tree with different mistakes. A **random forest** fixes this by training many trees in parallel, each on its own random sample of customers (with repeats allowed - a trick called **bootstrapping**), and letting them vote. Individual trees still make mistakes, but different trees make *different* mistakes, and the vote averages the noise away.
 
 The second version names the specific weakness being fixed, defines the two new terms it introduces inline, and sets up the reader to interpret the numbers that follow - rather than just labeling what the code does.
 

@@ -2,8 +2,6 @@
 
 For peer-to-peer working sessions - team meetings, brainstorms, decision-making sessions, cross-team coordination.
 
-Gold standard: `D1_Team_Discussion_Apr11.md`, `D2_Team_Discussion_Apr12.md`, `D3_Team_Discussion_Apr15.md`, `BK_CrossTeam_Session_Apr21.md`.
-
 ## Template
 
 ```markdown
@@ -95,7 +93,6 @@ Gold standard: `D1_Team_Discussion_Apr11.md`, `D2_Team_Discussion_Apr12.md`, `D3
 Or for cross-team: `{Project}_CrossTeam_{Date}.md`
 
 Examples:
-- `D1_Team_Discussion_Apr11.md`
-- `D3_Team_Discussion_Apr15.md`
-- `Strategy_A2_Team_Discussion_Apr7.md`
-- `BK_CrossTeam_Session_Apr21.md`
+- `Launch_Kickoff_Team_Discussion_Apr11.md`
+- `Pricing_Review_Team_Discussion_Apr15.md`
+- `Onboarding_CrossTeam_Apr21.md`

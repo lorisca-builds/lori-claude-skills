@@ -2,9 +2,9 @@
 
 The single most expensive mistake this skill can make is producing a technically flawless
 artifact aimed at nobody in particular. A notebook that teaches machine learning to a
-vice-president of marketing wastes their time; a notebook that assumes fluency in overfitting
-loses a student who needed the explanation; a notebook that skips the reasoning chain to stay
-crisp throws away rubric marks.
+vice-president of marketing wastes their time. A notebook that assumes fluency in overfitting
+loses a learner who needed the explanation. A notebook that skips the reasoning chain to stay
+crisp gives a reviewer nothing to check.
 
 The content is often identical. **The structure, the voice, and the cut-list are not.**
 
@@ -15,10 +15,10 @@ artifact itself so no reader has to guess who it was built for.
 
 ## The three modes
 
-### STUDENT - the user is learning this material
+### LEARNER - the reader is building their own understanding
 
-**Reader:** The user, or someone at their level, working to understand the material well enough to be
-examined on it and to explain it to someone else.
+**Reader:** The user, or someone at their level, working to understand a method well enough to
+defend it under questioning and to explain it to someone else.
 
 **What they want:** comprehension. They need to be able to defend every choice, not just repeat
 it. A cartoon version they can't defend is worse than useless.
@@ -38,32 +38,33 @@ back in their own words - what it predicts, why that metric, why the winner won?
 
 ---
 
-### GRADER - a professor is marking this
+### REVIEWER - someone technical is checking this work
 
-**Reader:** the instructor, with a rubric in hand, reading perhaps twenty of these.
+**Reader:** a technical reader with criteria in hand: a team lead signing off a model, a
+take-home review panel, a model-risk or validation reviewer, a client's data lead. Often
+reading several of these back to back.
 
-**What they want:** evidence that the reasoning happened. The grader already knows what boosting
+**What they want:** evidence that the reasoning happened. The reviewer already knows what boosting
 is. They are not reading to learn - they are reading to check whether *you* know, and whether the
 choices were justified rather than defaulted into.
 
-**Voice:** the same plain-language rules as STUDENT. This surprises people, but it's correct: an
+**Voice:** the same plain-language rules as LEARNER. This surprises people, but it's correct: an
 explanation clear enough to teach with is also the clearest possible evidence of understanding.
-Compressing it to sound sophisticated reads as hand-waving and loses marks.
+Compressing it to sound sophisticated reads as hand-waving and costs trust.
 
-**Structure:** STUDENT's arc, plus the rubric-facing scaffolding in
-`references/graded-assignment-checklist.md` - team-name placeholder, rubric self-check, the
-no-AI-disclosure rule.
+**Structure:** LEARNER's arc, plus the review-facing scaffolding in
+`references/review-checklist.md` - owner line, criteria self-check, the AI-use question.
 
-**What gets cut:** nothing, and be careful here. The instinct to "tighten it up for submission" is
-usually an instinct to delete the justifications the rubric is specifically paying for. The
+**What gets cut:** nothing, and be careful here. The instinct to "tighten it up before it ships" is
+usually an instinct to delete the justifications the reviewer is specifically paying for. The
 diagnostic detours - a model that lost, a metric that misled, a tuning pass that barely moved -
 are among the *highest*-value content in this mode, because they demonstrate judgement rather
 than recipe-following.
 
-**Deliverable:** one executed `.ipynb`, plus whatever the assignment separately requires.
+**Deliverable:** one executed `.ipynb`, plus whatever the brief separately requires.
 
-**Self-check:** read the actual current rubric line by line against the finished notebook, every
-top-band criterion. State any place you're not certain it lands, and why.
+**Self-check:** read the actual current criteria line by line against the finished notebook, every
+one of them. State any place you're not certain it lands, and why.
 
 ---
 
@@ -86,7 +87,7 @@ Numbers appear in business units: buyers reached, budget saved, share of sales c
 over current practice. "0.688 F1" means nothing to this reader. "Catches roughly three-quarters
 of likely buyers" means something.
 
-**Structure - inverted, never chronological.** The STUDENT/GRADER arc walks forward through the
+**Structure - inverted, never chronological.** The LEARNER/REVIEWER arc walks forward through the
 work. This one starts at the destination:
 
 1. **The finding** - one sentence, quantified, in business terms.
@@ -103,8 +104,8 @@ an appendix nobody opens unless they challenge point 3.
 **A worked example of how violently this cuts.** In the online-shoppers analysis, the most
 interesting finding in the whole notebook was that a one-question decision tree scored a better F1
 than tuned XGBoost - because the default 0.50 cutoff flattered it, while ROC-AUC showed the
-opposite. That is the single highest-value passage in GRADER mode: it demonstrates real
-diagnostic reasoning and would earn marks. In EXECUTIVE mode it is **deleted entirely.** Not
+opposite. That is the single highest-value passage in REVIEWER mode: it demonstrates real
+diagnostic reasoning, which is what a reviewer is looking for. In EXECUTIVE mode it is **deleted entirely.** Not
 shortened - deleted. The executive does not care which model won or how the cutoff was chosen;
 they care that targeting the top 20% of visits reaches 79% of buyers.
 
@@ -130,10 +131,10 @@ follow-up question? If any slide needs you standing next to it to make sense, it
 
 Read it from the request. Signals:
 
-- **GRADER** - a named assignment, "team assignment," a due date, "rubric," "submit," team member names, an
-  assignment brief in the conversation or project knowledge.
-- **STUDENT** - "practice," "exam prep," "session prep," "just want to try this," "I'm testing
-  this," no deadline, no grading language.
+- **REVIEWER** - a named deliverable or take-home brief, written acceptance criteria, "sign-off,"
+  "validation," "review," a hand-off date, named owners or contributors.
+- **LEARNER** - "practice," "I'm learning this," "just want to try this," "I'm testing
+  this," no hand-off, no criteria.
 - **EXECUTIVE** - "present this," "pitch," "for the client," "for my manager," "stakeholders,"
   "make the case," "business audience," or any framing where someone is being asked to *decide*
   rather than to *evaluate the work*.
@@ -141,8 +142,8 @@ Read it from the request. Signals:
 **If it's genuinely ambiguous, ask.** Getting this wrong means rebuilding structural parts of the
 artifact - not rewording it - which costs far more than one question up front.
 
-**Two audiences can both be real.** "Build the assignment notebook and I'll present the findings to the
-class" is GRADER *and* EXECUTIVE - build both artifacts rather than compromising into an
+**Two audiences can both be real.** "Build the notebook for the model review and I'll present the
+findings to leadership" is REVIEWER *and* EXECUTIVE - build both artifacts rather than compromising into an
 artifact that serves neither well. Say plainly which one is which when delivering them.
 
 ## State the choice in the artifact

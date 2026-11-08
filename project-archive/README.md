@@ -27,7 +27,7 @@ Same as chat-archive: connect Notion, and allow `api.notion.com` in Claude's net
 
 - Archive a project other than the one it's running in. Claude's chat tools only see the current project.
 - Archive every chat without asking. Dead ends stay out.
-- Analyze the work for a portfolio or an assignment. It documents. Analysis is a separate job that can use the wiki as input.
+- Analyze the work for a portfolio or a review. It documents. Analysis is a separate job that can use the wiki as input.
 
 ## Limits
 

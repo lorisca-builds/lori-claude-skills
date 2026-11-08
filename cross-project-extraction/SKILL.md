@@ -57,7 +57,7 @@ OUTBOUND uses this map to suggest a destination. Replace the examples
 with your own projects and one line on what each one holds.
 
 - **[Project A]** → [what lives there, e.g. personal working patterns and preferences]
-- **[Project B]** → [e.g. coursework, frameworks, case structures, feedback]
+- **[Project B]** → [e.g. analysis work, frameworks, case structures, feedback]
 - **[Project C]** → [e.g. writing voice, narrative structures, framing that worked]
 
 If the map is still blank, ask the user which project they think has it.

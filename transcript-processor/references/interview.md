@@ -79,7 +79,7 @@ Name files so the project, the interviewee and the date are all visible.
 
 Examples:
 - `ClientX_JaneDoe_Interview_Apr16.md`
-- `MT_Bank_Jordan_Interview_Apr16.md`
+- `MarketResearch_OpsLead_Interview_Apr21.md`
 - `Sourcing_SupplierContact_Interview_May03.md`
 
 Date format matches the user's existing files (`Apr16`, `Apr21`).

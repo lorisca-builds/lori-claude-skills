@@ -2,12 +2,11 @@
 """
 Execute a Jupyter notebook top-to-bottom in a completely fresh kernel and
 report whether it ran clean. This is the automated version of the
-"restart the runtime, run all" check that course materials
-flag as the single most-penalized technical failure: a notebook that
-only works because of a variable still sitting in memory from a cell
-that was later edited or deleted. That failure is invisible on your own
-screen and fatal the moment a grader (or Colab, or the user) opens a fresh
-copy and runs it from the top.
+"restart the runtime, run all" check, aimed at the most common way a
+handed-off notebook fails: it only works because of a variable still
+sitting in memory from a cell that was later edited or deleted. That
+failure is invisible on your own screen and fatal the moment a reviewer
+(or Colab, or the user) opens a fresh copy and runs it from the top.
 
 Usage:
     python execute_notebook.py notebook.ipynb [notebook2.ipynb ...]

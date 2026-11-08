@@ -4,12 +4,13 @@ description: >
   Builds or updates a Notion wiki for a whole Claude project: one project
   page (titled with the project name) with a project brief on top and a
   database of curated handoff records, one per chat. Use it to document
-  past projects such as school courses, capstones, or client work, or to
+  past projects such as client engagements, internal initiatives or
+  long-running programs, or to
   hand a whole project to another AI or person. Trigger on "archive this
   project", "document this project", "build the wiki for this project",
   "export this project to Notion", "project handoff", or /project-archive.
   Must run from inside the project being archived. Documentation only: it
-  does not analyze the work for portfolio or assignments. For a single chat,
+  does not analyze the work for a portfolio or a review. For a single chat,
   use chat-archive instead.
 ---
 
@@ -66,7 +67,7 @@ offer to search by topic for the rest.
 ## Step 5: Gather project-level files
 
 - **Project files** in `/mnt/project/`: The user's uploaded sources
-  (assignment briefs, readings, drafts). Attach text files. Binary files
+  (briefs, readings, drafts). Attach text files. Binary files
   follow the upload rules below. List everything in the project page's
   file table.
 - **Published artifacts**: `Artifact` action "list". Only link ones
@@ -117,7 +118,7 @@ above the database. Use the batch notes plus the records. Structure:
 > curated handoff of one chat. Open only the ones you need.
 
 ## Project brief
-**What this project was:** course, client, or goal, and the time span.
+**What this project was:** client, initiative, or goal, and the time span.
 **Final deliverables:** what was produced, with links.
 **Key decisions across the project:** decision | reason | which chat.
 **How the user directed this project:** 4 to 8 patterns seen across chats,
@@ -146,7 +147,7 @@ else.
 
 ## Anti-patterns
 
-- **Doing portfolio or assignment analysis.** That is a separate job
+- **Doing portfolio or performance analysis.** That is a separate job
   that uses this wiki as input.
 - **Archiving every chat without asking.** The user picks.
 - **Reading all chats before writing any record.** Batch, or the late

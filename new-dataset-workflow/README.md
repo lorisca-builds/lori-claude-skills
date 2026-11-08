@@ -6,7 +6,7 @@ Step 1 of 4 in the [ML notebook set](../README.md#ml-notebook-workflow).
 
 ## The problem
 
-I was learning machine learning on a one-year MBA, and the easy mistake was picking an algorithm before understanding the data. Claude would happily go along with it and describe a well-known dataset from recall, with numbers nobody had checked.
+When I was building my machine learning practice, the easy mistake was picking an algorithm before understanding the data. Claude would happily go along with it and describe a well-known dataset from recall, with numbers nobody had checked.
 
 The skill puts it this way: picking an algorithm before understanding the data is like a doctor prescribing medicine before hearing the symptoms.
 

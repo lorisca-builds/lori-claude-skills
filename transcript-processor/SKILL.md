@@ -1,6 +1,6 @@
 ---
 name: transcript-processor
-description: Universal transcript processor - turns raw transcripts (Apple Voice Memo, Otter, Zoom, pasted text) into clean structured session notes. Trigger when (1) the user pastes raw conversational text with filler words ("um", "like", "you know"), false starts, run-ons, or mistranscriptions; (2) they say "process this transcript", "clean this up", "process this voice memo", "session notes from this", "transcribe"; (3) they upload a transcript file (.txt, .vtt, .srt, .md); (4) they paste a transcript and mention a reference file (slides, notes, website) to process it against. Five modes - class-lecture, interview, team-discussion, mentoring-session, voice-memo - each loads its template from references/ before drafting. Trigger eagerly. Better to fire and confirm the mode than miss a transcript.
+description: Universal transcript processor - turns raw transcripts (Apple Voice Memo, Otter, Zoom, pasted text) into clean structured session notes. Trigger when (1) the user pastes raw conversational text with filler words ("um", "like", "you know"), false starts, run-ons, or mistranscriptions; (2) they say "process this transcript", "clean this up", "process this voice memo", "session notes from this", "transcribe"; (3) they upload a transcript file (.txt, .vtt, .srt, .md); (4) they paste a transcript and mention a reference file (slides, notes, website) to process it against. Five modes - talk-lecture, interview, team-discussion, feedback-session, voice-memo - each loads its template from references/ before drafting. Trigger eagerly. Better to fire and confirm the mode than miss a transcript.
 ---
 
 # Transcript Processor
@@ -23,10 +23,10 @@ Five modes. Pick one before drafting. Load the matching reference file.
 
 | Mode | Trigger signals | Reference |
 |---|---|---|
-| **Class / lecture** | Professor named, "session X", "class Y", course code, lecture-style monologue | `references/class-lecture.md` |
+| **Talk / lecture** | Speaker introduced, event or series named, "keynote", "workshop", "guest speaker", lecture-style monologue | `references/talk-lecture.md` |
 | **Interview** | "Interview with X", external party named (industry contact, executive, customer), Q&A pattern, single interviewee | `references/interview.md` |
 | **Team discussion** | Multiple peers named, "team meeting", "team discussion", decisions being made, action items implied | `references/team-discussion.md` |
-| **Mentoring session** | Faculty feedback context, "professor said", "mentoring session", "feedback meeting", one expert reviewing student work | `references/mentoring-session.md` |
+| **Feedback session** | "feedback meeting", "check-in", "review with my manager / advisor / the client", one person with more context reviewing work in progress | `references/feedback-session.md` |
 | **Voice memo** | Single speaker (the user alone), casual conversation with one other person, brain dump | `references/voice-memo.md` |
 
 **If ambiguous:** ask one question with the two most likely modes. Don't guess.
@@ -63,9 +63,9 @@ Five modes. Pick one before drafting. Load the matching reference file.
 
 ### File naming
 Auto-name using `{Context}_{Type}_{Date}.md`. Examples:
-- `Fintech_Class2_Session_Notes.md`
+- `DataSummit_PricingKeynote_Mar12.md`
 - `ClientX_JaneDoe_Interview_Apr16.md`
-- `D2_Team_Discussion_Apr12.md`
+- `Launch_Team_Discussion_Apr12.md`
 - `Voice_Memo_May11.md`
 
 If context isn't obvious from the transcript or the conversation, default-name and ask the user to correct.
@@ -77,7 +77,7 @@ Load and apply the matching reference file's template. Don't improvise on struct
 
 ### Length and tone
 - Plain English. No academic framing.
-- Preserve voice - if a professor uses a specific phrase ("TechFin not FinTech"), keep it as a quote.
+- Preserve voice - if a speaker uses a specific phrase ("TechFin not FinTech"), keep it as a quote.
 - Direct quotes get quotation marks. Paraphrases don't.
 - Tables only when comparing options or tracking decisions. Not for narrative content.
 

@@ -1,6 +1,6 @@
 ---
 name: ml-notebook-audit
-description: Audits a finished machine learning notebook draft for sequence, argument and narrative before submission. Use when a notebook is drafted and the user wants it checked rather than extended in coursework or any ML deliverable. Trigger on "audit my notebook", "check my notebook", "review my draft", "does this hang together", "is my narrative consistent", "check the sequence", "do my numbers match", "pre-submission check", "read this as a stranger", "is this over-engineered", or whenever the user uploads a drafted .ipynb or its PDF export and asks whether it is ready. Reports findings ranked by what costs marks, and reflects back the argument the notebook actually makes so they can compare it to the one they intended. Never rewrites the notebook and never adds analysis - that is ml-notebook-executor's job. Cannot certify that code runs, only flag likely breaks.
+description: Audits a finished machine learning notebook draft for sequence, argument and narrative before it ships. Use when a notebook is drafted and the user wants it checked rather than extended, for any ML deliverable. Trigger on "audit my notebook", "check my notebook", "review my draft", "does this hang together", "is my narrative consistent", "check the sequence", "do my numbers match", "pre-handoff check", "read this as a stranger", "is this over-engineered", or whenever the user uploads a drafted .ipynb or its PDF export and asks whether it is ready. Reports findings ranked by what costs credibility, and reflects back the argument the notebook actually makes so they can compare it to the one they intended. Never rewrites the notebook and never adds analysis - that is ml-notebook-executor's job. Cannot certify that code runs, only flag likely breaks.
 ---
 
 # ML Notebook Audit
@@ -17,7 +17,7 @@ The executed notebook, `.ipynb` preferred, or its PDF export. Both carry the out
 
 **If the outputs have been cleared, say so immediately and ask for the executed version.** Without
 outputs, the number-matching pass is impossible, and that pass finds the failure that costs the most
-marks. Do not run a partial audit and present it as complete.
+credibility. Do not run a partial audit and present it as complete.
 
 ## What this skill cannot do
 
@@ -58,7 +58,7 @@ that is not just "it scored highest".
 
 ## Pass 3 - Number matching
 
-This is the failure graders punish hardest, and it is mechanical, so do it thoroughly.
+This is the failure reviewers catch first and forgive least, and it is mechanical, so do it thoroughly.
 
 Extract every number from every markdown cell. For each, find it in a code cell's output. Report
 every one that does not match, with the markdown cell it is in, the number claimed, and the number
@@ -104,11 +104,11 @@ Flag any number stated without a "which means" clause nearby. The number is not 
 - The filename in `read_csv` against the actual file, character for character, watching for a
   trailing "(1)".
 - Every variable used is assigned somewhere in the visible code. A variable that exists only in the
-  live session is the invisible bug: the notebook works on their screen and dies on the grader's.
+  live session is the invisible bug: the notebook works on their screen and dies on the reviewer's.
 - All imports present and at the top.
 - Cells in an order that runs top to bottom.
-- Their name in the notebook.
-- AI use disclosed, if the course or employer policy asks for it.
+- Owner and contributor names in the notebook, if it is a shared deliverable.
+- AI use disclosed, if the organization's or client's policy asks for it.
 
 ## Pass 7 - The stranger read
 
@@ -130,9 +130,9 @@ Deliver in this order and nothing else.
 1. **The argument your notebook actually makes.** The five sentences from pass 7.
 2. **Where a reader gets lost.** One or two lines.
 3. **Findings**, ranked by cost, in three bands:
-   - **Would make it ungradeable.** Code that will not run, a missing file, a variable that only
+   - **Blocks the review.** Code that will not run, a missing file, a variable that only
      exists in memory. Nothing else can be evaluated if these are present.
-   - **Loses marks directly.** Number mismatches, a model with no named reason, EDA before cleaning,
+   - **Costs credibility directly.** Number mismatches, a model with no named reason, EDA before cleaning,
      the test set touched more than once, undefined jargon in a business text cell.
    - **Polish.** Dead weight, orphan adjectives, untranslated units.
 4. **What was checked and found clean.** Name the passes that came back with nothing, so coverage is

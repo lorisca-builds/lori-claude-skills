@@ -1,12 +1,12 @@
 # Notebook structure - the fixed narrative arc
 
-Every notebook this skill builds follows the same shape, whether the destination is a graded team submission or a solo practice notebook, and whether the target is a category (classification) or a number (regression). The two problem types diverge in specific spots - marked below - but the arc itself doesn't change, because the arc *is* the pedagogical point: understand before cleaning, clean before modeling, baseline before comparing, and justify every choice in plain language before the reader hits the code that implements it.
+Every notebook this skill builds follows the same shape, whether the destination is a reviewed team deliverable or a solo practice notebook, and whether the target is a category (classification) or a number (regression). The two problem types diverge in specific spots - marked below - but the arc itself doesn't change, because the arc *is* the pedagogical point: understand before cleaning, clean before modeling, baseline before comparing, and justify every choice in plain language before the reader hits the code that implements it.
 
 Treat this as a checklist of sections, not a rigid cell-by-cell script - a section can span several code/markdown cell pairs if the content needs it (a hyperparameter search, for instance, usually needs its own explanation cell, its own loop/grid cell, and its own "here's what the chart shows" cell after).
 
 ## 1. Title cell
 
-State what the notebook does and what dataset it uses, in one or two sentences. If this is a graded team submission, include an explicit placeholder for team member names (e.g. `**Team members:** [Team Member Names Here]`) - don't ask the user to fill it in before you finish; leave the placeholder and move on. If it's a solo practice notebook, skip the placeholder entirely; there's no team to name.
+State what the notebook does and what dataset it uses, in one or two sentences. If this is a reviewed deliverable, include an owner and contributor line with placeholders where names aren't known yet (e.g. `**Owner:** [Name] · **Contributors:** [Names]`) - don't stall the build to collect them, leave the placeholder and move on. A solo practice notebook skips this line entirely.
 
 ## 2. The business problem, in plain language
 
@@ -36,7 +36,7 @@ If a column looks redundant with another (two encodings of the same information)
 
 ## 6. Split into training and test data
 
-Explain *why* a held-out test set matters (a model graded on data it memorized proves nothing) before the split code. For classification, `stratify=` on the target is worth explaining explicitly - it exists precisely because Section 4 already showed the classes are imbalanced. Fix a random seed here and note that the same seed is used everywhere randomness appears in the notebook, for reproducibility.
+Explain *why* a held-out test set matters (a model scored on data it memorized proves nothing) before the split code. For classification, `stratify=` on the target is worth explaining explicitly - it exists precisely because Section 4 already showed the classes are imbalanced. Fix a random seed here and note that the same seed is used everywhere randomness appears in the notebook, for reproducibility.
 
 ## 7. The baseline
 
@@ -46,7 +46,7 @@ Explain *why* a held-out test set matters (a model graded on data it memorized p
 
 ## 8. The algorithm ladder
 
-Follow `references/algorithm-ladders.md` for the specific models and order. The shape that matters regardless of which ladder: train an unregularized/default version first, let it show its real weakness (usually overfitting - memorizing training data at the cost of test performance), tune it, then move to the next model *only after naming, in plain language, the specific weakness of the previous model that justifies the move*. This "each step because of a named flaw in the last" structure is what turns a list of models into an actual argument - a rubric criterion in its own right for this course, and good practice regardless.
+Follow `references/algorithm-ladders.md` for the specific models and order. The shape that matters regardless of which ladder: train an unregularized/default version first, let it show its real weakness (usually overfitting - memorizing training data at the cost of test performance), tune it, then move to the next model *only after naming, in plain language, the specific weakness of the previous model that justifies the move*. This "each step because of a named flaw in the last" structure is what turns a list of models into an actual argument, and it's the first thing a technical reviewer looks for.
 
 Use a consistent scoring helper across every model in the ladder (same train/test split, same metrics printed, same rounding) so the final comparison table in Section 10 is apples-to-apples without extra munging.
 
@@ -63,7 +63,7 @@ This section earns its own real estate; don't compress it into a single sentence
 - **The headline metric this notebook adopts, and why it fits this dataset's actual shape** - traced back to the balance/distribution numbers from Section 4, not asserted from habit.
 - A secondary metric reported alongside, for the intuitive "what would a non-technical stakeholder ask for first" reason.
 
-Two notebooks in the same batch (e.g. two candidate datasets for the same assignment) do **not** need to land on the same metric - pick independently, per dataset, and say so if they differ.
+Two notebooks in the same batch (e.g. two candidate datasets for the same decision) do **not** need to land on the same metric - pick independently, per dataset, and say so if they differ.
 
 ## 11. Side-by-side comparison
 

@@ -14,10 +14,10 @@ It picks one of five modes and loads that mode's template from `references/`:
 
 | Mode | For |
 |---|---|
-| Class / lecture | One person teaching |
+| Talk / lecture | One person presenting to an audience |
 | Interview | Q&A with one outside person |
 | Team discussion | Peers making decisions |
-| Mentoring session | An expert giving feedback on your work |
+| Feedback session | A mentor, manager, advisor or client reviewing your work in progress |
 | Voice memo | You alone, or a casual conversation |
 
 Cleaning is editing. Every meaningful sentence, example and counterexample stays.

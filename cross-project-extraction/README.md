@@ -4,7 +4,7 @@
 
 ## The problem
 
-I work across several Claude projects. One holds notes on how I work, one holds my coursework, one holds my writing. What I figure out in one project stays locked there, because Claude can't see one project from inside another.
+I work across several Claude projects. One holds notes on how I work, one holds my analysis work, one holds my writing. What I figure out in one project stays locked there, because Claude can't see one project from inside another.
 
 I tried a single master context file shared across projects. It was too broad. Most of the time I only needed one niche workflow, and loading everything to get it was wasteful.
 

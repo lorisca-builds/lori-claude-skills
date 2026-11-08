@@ -1,6 +1,6 @@
 # ml-notebook-audit
 
-**Use it when** a notebook is drafted and you want it checked before you submit or share it.
+**Use it when** a notebook is drafted and you want it checked before you hand it off or share it.
 
 Step 4 of 4 in the [ML notebook set](../README.md#ml-notebook-workflow).
 
@@ -22,7 +22,7 @@ It reports. It never rewrites. Seven passes:
 
 The seventh is the most useful part. If those five sentences don't match what you thought you wrote, the problem is structural.
 
-Findings come ranked in three bands: would make it ungradeable, loses marks directly, polish.
+Findings come ranked in three bands: blocks the review, costs credibility directly, polish.
 
 ## What it won't do
 

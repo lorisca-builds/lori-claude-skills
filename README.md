@@ -79,7 +79,7 @@ Each skill folder has its own README with the problem behind it, what it does, w
 - `context-engineering`: replace the placeholder file names with your own.
 - `linkedin-connection-note`: replace the voice section with your own tone.
 
-These were written for how I work and then cleaned up for sharing. Some were built during my MBA, so the ML set leans toward coursework. Change whatever doesn't fit.
+These were written for how I work and then cleaned up for sharing. Change whatever doesn't fit.
 
 ## License
 
