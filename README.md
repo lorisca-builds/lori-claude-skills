@@ -1,5 +1,7 @@
 # lori-claude-skills
 
+[![Check skills](https://github.com/lorisca-builds/lori-claude-skills/actions/workflows/check-skills.yml/badge.svg)](https://github.com/lorisca-builds/lori-claude-skills/actions/workflows/check-skills.yml)
+
 ![Twelve Claude skills in four sets](docs/cover.svg)
 
 Twelve skills I built for Claude to fix problems I kept running into in my own work. Each one started as a failure I got tired of repeating. They are free to use and change.
@@ -81,8 +83,12 @@ Each skill folder has its own README with the problem behind it, what it does, w
 
 These were written for how I work and then cleaned up for sharing. Change whatever doesn't fit.
 
+## How the repo stays consistent
+
+`scripts/check_skills.py` runs on every push. It checks that each skill has valid frontmatter, that its name matches its folder (Claude needs both to match), that its description fits the 1,024 character limit, that every reference file it points to exists, and that this README lists it. Run it locally with `python3 scripts/check_skills.py`. Standard library only.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
 
-Built by [Lorisca Cessia](https://lori-sca.github.io).
+Built by [Lorisca Cessia Tuuk](https://lori-sca.github.io).
